@@ -354,3 +354,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 60
   maxSpeed: 5
+  director: {fileID: 0}
+  speedFector: 5
+  startRotationOffset: 90
