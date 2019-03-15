@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ocean
+    uniqueID: 376100913
+    locked: 0
+  - name: Islands
+    uniqueID: 3445841475
+    locked: 0
+  - name: Characters
+    uniqueID: 2073150987
+    locked: 0
