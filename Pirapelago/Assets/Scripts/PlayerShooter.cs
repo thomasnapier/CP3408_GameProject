@@ -6,18 +6,21 @@ public class PlayerShooter : MonoBehaviour
 {
     private Rigidbody2D rb2d;
     public float speed;
- 
+    public Vector2 direction;
+    public float destroyTime;
+
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        //Adds force to the bullet Rigidbody component
+        rb2d.AddForce(direction * speed);
     }
 
     void FixedUpdate()
     {
-        //Adds force to the bullet Rigidbody component
-        Vector2 moveUp = new Vector2(0, 5);
-        rb2d.AddForce(moveUp * speed);
+        //Destroy the cannonball after an amount of time
+        Destroy(gameObject, destroyTime);
     }
 
     void Update()
