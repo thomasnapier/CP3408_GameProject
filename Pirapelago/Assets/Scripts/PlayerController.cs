@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public Transform BulletSpawn;
     public float fireRate;
     private float nextFire;
-    public float destroyTime; 
+    public Vector2 fireVector;
 
 
     // Start is called before the first frame update
@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //Make ship rotate to face mouse position
         mousePositionInWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         angle = (Mathf.Atan2(mousePositionInWorld.y - transform.position.y, mousePositionInWorld.x - transform.position.x) * Mathf.Rad2Deg);
 
@@ -49,13 +50,12 @@ public class PlayerController : MonoBehaviour
         //Instantiates a new bullet when the mouse is clicked or held down every (nextFire) often for (destroyTime) amount of time
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
-            //create a new sprite on the ship
-            //get the front end of the ship
-            //add force going forward from that position and keep it going from there
-            //make sprite disappear after a certain distance and delete it self
+            //make vector of ship direction
+            fireVector = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
+            //create a new cannonball on the bulletSpawn
             nextFire = Time.time + fireRate;
             var bullet = Instantiate(shot, BulletSpawn.position, BulletSpawn.rotation);
-            Destroy(bullet, destroyTime);
+            bullet.GetComponent<PlayerShooter>().direction = fireVector;
         }
     }
 }
