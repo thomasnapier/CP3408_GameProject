@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2575880822971998100}
   - component: {fileID: 1881706127840125265}
   - component: {fileID: 7566511933271070222}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Island_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,4 +208,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c9bb2383839d143ae739d96243f520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopUI: {fileID: 9185498496165887773, guid: 70bd10c016b61ae4a91b7e2614b9fde9, type: 3}

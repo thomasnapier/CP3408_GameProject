@@ -12,8 +12,8 @@ public class IslandSpawner : MonoBehaviour
 
     public int island1SpawnRate, island2SpawnRate, island3SpawnRate;
 
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         int randomNum = Random.Range(0, 100);
         Debug.Log(randomNum);
@@ -29,6 +29,8 @@ public class IslandSpawner : MonoBehaviour
         {
             Instantiate(island3, GetComponent<Transform>().position, Quaternion.identity);
         }
-      
+
+
+        AstarPath.active.Scan();
     }
 }
