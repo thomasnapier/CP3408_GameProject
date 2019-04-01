@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - shopUI
+  - canvas
   layers:
   - Default
   - TransparentFX

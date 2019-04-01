@@ -5,20 +5,34 @@ using UnityEngine.UI;
 
 public class EnterShop : MonoBehaviour
 {
-    private GameObject shopUI;
+    public GameObject shopUI;
+    public GameObject canvas;
 
     private void Start()
     {
-        shopUI = GameObject.FindGameObjectWithTag("shopUI");
+        canvas = GameObject.FindGameObjectWithTag("canvas");
+        shopUI = canvas.transform.Find("shopUI").gameObject;
+        //shopUI = GameObject.FindWithTag("MainCamera");
+        //shopUI = GameObject.Find("Camvas/shopUI");
+
+        Debug.Log(shopUI);
         shopUI.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        shopUI.SetActive(true);
+        if (collision.tag == "Player")
+        {
+            shopUI.SetActive(true);
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        shopUI.SetActive(false);
+        if (collision.tag == "Player")
+        {
+            shopUI.SetActive(false);
+
+        }
     }
 }
