@@ -8,31 +8,41 @@ public class EnterShop : MonoBehaviour
     public GameObject shopUI;
     public GameObject canvas;
 
-    private void Start()
+    bool isPaused;
+
+    private void Awake()
     {
         canvas = GameObject.FindGameObjectWithTag("canvas");
         shopUI = canvas.transform.Find("shopUI").gameObject;
-        //shopUI = GameObject.FindWithTag("MainCamera");
-        //shopUI = GameObject.Find("Camvas/shopUI");
-
-        Debug.Log(shopUI);
-        shopUI.SetActive(false);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            shopUI.SetActive(true);
-
+            PauseGame();
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.tag == "Player")
+        if (Input.GetKeyDown(KeyCode.Escape) || !isPaused)
         {
-            shopUI.SetActive(false);
-
+            ContinueGame();
         }
+    }
+
+    public void PauseGame()
+    {
+        shopUI.SetActive(true);
+        Time.timeScale = 0;
+        isPaused = true;
+    }
+
+    public void ContinueGame()
+    {
+        shopUI.SetActive(false);
+        Time.timeScale = 1;
+        isPaused = false;
     }
 }
