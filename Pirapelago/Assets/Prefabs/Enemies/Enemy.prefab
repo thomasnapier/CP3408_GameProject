@@ -388,6 +388,9 @@ MonoBehaviour:
   stopApproachDistance: 6
   reverseApproachDistance: 5
   startRotationOffset: 90
+  healthSlider: {fileID: 0}
+  coinCounter: {fileID: 0}
+  coinText: {fileID: 0}
 --- !u!114 &439886619240034854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +437,7 @@ MonoBehaviour:
   rotationSpeed: 5
   money: 1
   fireRate: 0
+  weaponType: 1
 --- !u!114 &1463579209325642349
 MonoBehaviour:
   m_ObjectHideFlags: 0

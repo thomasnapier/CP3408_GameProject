@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         //Instantiates a new bullet when the mouse is clicked or held down every (nextFire) often for (destroyTime) amount of time
         if (Input.GetButton("Fire1"))
         {
-            gameObject.GetComponent<CharacterShoot>().fireWeapon();
+            gameObject.GetComponent<CharacterShoot>().fireWeapon(stats.WeaponType);
         }
     }
 

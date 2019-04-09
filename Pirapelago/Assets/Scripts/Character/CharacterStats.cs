@@ -16,6 +16,8 @@ public class CharacterStats : MonoBehaviour
     private int money;
     [SerializeField]
     private float fireRate;
+    [SerializeField]
+    private int weaponType;
 
     public float CurrentHealth
     {
@@ -95,4 +97,16 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
+    public int WeaponType
+    {
+        get { return weaponType; }
+
+        set
+        {
+            if (value < 0)
+                weaponType = 0;
+            else
+                weaponType = value;
+        }
+    }
 }

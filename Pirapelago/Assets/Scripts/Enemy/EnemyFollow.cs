@@ -133,7 +133,7 @@ public class EnemyFollow : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<CharacterShoot>().fireWeapon();
+            gameObject.GetComponent<CharacterShoot>().fireWeapon(stats.WeaponType);
         }
     }
 
