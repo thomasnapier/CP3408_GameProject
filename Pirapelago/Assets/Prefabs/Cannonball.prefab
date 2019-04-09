@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3237862583849200788}
   - component: {fileID: 5272148607575567516}
   - component: {fileID: 7507527143134077238}
-  - component: {fileID: 7273789936726368152}
+  - component: {fileID: 5083745837536758992}
   m_Layer: 0
   m_Name: Cannonball
   m_TagString: Untagged
@@ -135,7 +135,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.78499997
---- !u!114 &7273789936726368152
+--- !u!114 &5083745837536758992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,9 +144,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 242355404103357571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a3586eab2d6eed48b0fdb1719697f08, type: 3}
+  m_Script: {fileID: 11500000, guid: a58ccf8cebab75240b65a102b9eb2bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
   direction: {x: 0, y: 0}
-  destroyTime: 3
+  destroyTime: 15

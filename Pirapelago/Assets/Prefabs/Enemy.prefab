@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 439886619240035035}
   - component: {fileID: 439886619240034848}
   - component: {fileID: 439886619240034854}
-  - component: {fileID: 7481132413505608374}
   - component: {fileID: 5748582113309605287}
+  - component: {fileID: 1463579209325642349}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -382,14 +382,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   updateRate: 2
-  speed: 350
   fMode: 0
   pathIsEnded: 0
   nextWaypointDistance: 0.4
   stopApproachDistance: 6
   reverseApproachDistance: 5
   startRotationOffset: 90
-  speedFector: 5
 --- !u!114 &439886619240034854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,22 +416,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &7481132413505608374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439886619240035034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd53e541ba00bee41ae01f206a9fb58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shot: {fileID: 242355404103357571, guid: 9f84e06c6e31fd24faade0415fd3668d, type: 3}
-  BulletSpawn: {fileID: 8093018199910203660}
-  fireRate: 0
-  fireVector: {x: 0, y: 0}
 --- !u!114 &5748582113309605287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +433,20 @@ MonoBehaviour:
   speed: 350
   rotationSpeed: 5
   money: 1
+  fireRate: 0
+--- !u!114 &1463579209325642349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439886619240035034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea2de8c83d33764d8b1e396b36c8752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shot: {fileID: 242355404103357571, guid: 9f84e06c6e31fd24faade0415fd3668d, type: 3}
 --- !u!1 &8685650118212502638
 GameObject:
   m_ObjectHideFlags: 0

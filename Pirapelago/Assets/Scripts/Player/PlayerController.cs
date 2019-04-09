@@ -8,17 +8,11 @@ public class PlayerController : MonoBehaviour
     public int acceleration;
     public GameObject director;
 
-
     Vector3 mousePositionInWorld;
     float angle;
     public float startRotationOffset;  //This is angle offset at starting.
 
     private CharacterStats stats;
-    public GameObject shot;
-    public Transform BulletSpawn;
-    private float nextFire;
-    public Vector2 fireVector;
-
 
     // Start is called before the first frame update
     void Start()
@@ -45,16 +39,10 @@ public class PlayerController : MonoBehaviour
         angle = (Mathf.Atan2(mousePositionInWorld.y - transform.position.y, mousePositionInWorld.x - transform.position.x) * Mathf.Rad2Deg);
 
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle + startRotationOffset), stats.RotationSpeed * Time.deltaTime);
-
         //Instantiates a new bullet when the mouse is clicked or held down every (nextFire) often for (destroyTime) amount of time
-        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        if (Input.GetButton("Fire1"))
         {
-            //make vector of ship direction
-            fireVector = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
-            //create a new cannonball on the bulletSpawn
-            nextFire = Time.time + stats.FireRate;
-            var bullet = Instantiate(shot, BulletSpawn.position, BulletSpawn.rotation);
-            bullet.GetComponent<PlayerShooter>().direction = fireVector;
+            gameObject.GetComponent<CharacterShoot>().fireWeapon();
         }
     }
 }

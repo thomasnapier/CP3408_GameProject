@@ -120,7 +120,7 @@ public class EnemyFollow : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<EnemyShoot>().fireWeapon();
+            gameObject.GetComponent<CharacterShoot>().fireWeapon();
         }
     }
 }
