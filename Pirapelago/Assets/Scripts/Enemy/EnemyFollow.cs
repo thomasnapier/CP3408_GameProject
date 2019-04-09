@@ -41,14 +41,6 @@ public class EnemyFollow : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb2d = GetComponent<Rigidbody2D>();
 
-        if (target == null)
-        {
-            Debug.LogError("no player found");
-            return;
-        }
-
-        seeker.StartPath(transform.position, target.position, OnPathComplete);
-
         StartCoroutine(UpdatePath());
     }
 
@@ -56,7 +48,8 @@ public class EnemyFollow : MonoBehaviour
     {
         if (target == null)
         {
-            //TODO: Insert a player search here
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+            Debug.Log(target);
             yield return false;
         }
 
@@ -82,7 +75,6 @@ public class EnemyFollow : MonoBehaviour
             return;
         }
 
-        //TODO alwase look at player
         angle = (Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle + startRotationOffset), speedFector * Time.deltaTime);
 
@@ -126,6 +118,10 @@ public class EnemyFollow : MonoBehaviour
                 //TODO: make enemy back off from the target
                 return;
             }
+        }
+        else
+        {
+            gameObject.GetComponent<EnemyShoot>().fireWeapon();
         }
     }
 }
