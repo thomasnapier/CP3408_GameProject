@@ -7,14 +7,15 @@ public class EnemyShoot : MonoBehaviour
 
     public GameObject shot;
     public Transform BulletSpawn;
-    public float fireRate;
     private float nextFire;
     public Vector2 fireVector;
+    private CharacterStats stats;
+
     // Start is called before the first frame update
     void Start()
     {
         BulletSpawn = gameObject.transform.Find("bulletSpawner");
-        fireRate = 1f;
+        stats = gameObject.GetComponent<CharacterStats>();
     }
 
     // Update is called once per frame
@@ -30,7 +31,7 @@ public class EnemyShoot : MonoBehaviour
             //make vector of ship direction
             fireVector = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
             //create a new cannonball on the bulletSpawn
-            nextFire = Time.time + fireRate;
+            nextFire = Time.time + stats.FireRate;
             var bullet = Instantiate(shot, BulletSpawn.position, BulletSpawn.rotation);
             bullet.GetComponent<PlayerShooter>().direction = fireVector;
         }

@@ -6,18 +6,16 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2d;
     public int acceleration;
-    public int maxSpeed;
     public GameObject director;
 
 
     Vector3 mousePositionInWorld;
     float angle;
-    public float speedFector;
     public float startRotationOffset;  //This is angle offset at starting.
 
+    private CharacterStats stats;
     public GameObject shot;
     public Transform BulletSpawn;
-    public float fireRate;
     private float nextFire;
     public Vector2 fireVector;
 
@@ -26,6 +24,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();     //assigns the rigidbody to the rb2d variable
+        stats = gameObject.GetComponent<CharacterStats>();
     }
 
     void FixedUpdate()
@@ -35,7 +34,7 @@ public class PlayerController : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rb2d.AddForce(movement * acceleration);
-        rb2d.velocity = Vector2.ClampMagnitude(rb2d.velocity, maxSpeed);
+        rb2d.velocity = Vector2.ClampMagnitude(rb2d.velocity, stats.Speed);
     
     }
 
@@ -45,7 +44,7 @@ public class PlayerController : MonoBehaviour
         mousePositionInWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         angle = (Mathf.Atan2(mousePositionInWorld.y - transform.position.y, mousePositionInWorld.x - transform.position.x) * Mathf.Rad2Deg);
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle + startRotationOffset), speedFector * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle + startRotationOffset), stats.RotationSpeed * Time.deltaTime);
 
         //Instantiates a new bullet when the mouse is clicked or held down every (nextFire) often for (destroyTime) amount of time
         if (Input.GetButton("Fire1") && Time.time > nextFire)
@@ -53,7 +52,7 @@ public class PlayerController : MonoBehaviour
             //make vector of ship direction
             fireVector = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
             //create a new cannonball on the bulletSpawn
-            nextFire = Time.time + fireRate;
+            nextFire = Time.time + stats.FireRate;
             var bullet = Instantiate(shot, BulletSpawn.position, BulletSpawn.rotation);
             bullet.GetComponent<PlayerShooter>().direction = fireVector;
         }

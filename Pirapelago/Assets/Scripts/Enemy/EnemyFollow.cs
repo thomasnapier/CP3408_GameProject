@@ -15,8 +15,7 @@ public class EnemyFollow : MonoBehaviour
     private Rigidbody2D rb2d;
     //the calculated path
     public Path path;
-    //the ai's speed per second
-    public float speed = 300f;
+
     public ForceMode2D fMode;
 
     [HideInInspector]
@@ -33,14 +32,14 @@ public class EnemyFollow : MonoBehaviour
     private float angle;
     //offset rotation of sprite
     public int startRotationOffset;
-    //speed of rotation
-    public float speedFector;
+
+    private CharacterStats stats;
 
     private void Start()
     {
         seeker = GetComponent<Seeker>();
         rb2d = GetComponent<Rigidbody2D>();
-
+        stats = gameObject.GetComponent<CharacterStats>();
         StartCoroutine(UpdatePath());
     }
 
@@ -76,7 +75,7 @@ public class EnemyFollow : MonoBehaviour
         }
 
         angle = (Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg);
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle + startRotationOffset), speedFector * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle + startRotationOffset), stats.RotationSpeed * Time.deltaTime);
 
 
         if (path == null)
@@ -98,7 +97,7 @@ public class EnemyFollow : MonoBehaviour
 
         //direction to next waypoint
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-        dir *= speed * Time.fixedDeltaTime;
+        dir *= stats.Speed * Time.fixedDeltaTime;
 
         //Move the AI
         rb2d.AddForce(dir, fMode);
