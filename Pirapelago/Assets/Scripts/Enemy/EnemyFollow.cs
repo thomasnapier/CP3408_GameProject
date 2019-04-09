@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Pathfinding;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Seeker))]
@@ -32,6 +33,12 @@ public class EnemyFollow : MonoBehaviour
     private float angle;
     //offset rotation of sprite
     public int startRotationOffset;
+    public GameObject healthSlider;
+    public GameObject coinCounter;
+    public GameObject coinText;
+    private CharacterStats playerStats;
+
+
 
     private CharacterStats stats;
 
@@ -40,6 +47,12 @@ public class EnemyFollow : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb2d = GetComponent<Rigidbody2D>();
         stats = gameObject.GetComponent<CharacterStats>();
+
+        playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
+        healthSlider = GameObject.FindGameObjectWithTag("canvas").transform.Find("healthSlider").gameObject;
+        coinCounter = healthSlider.transform.Find("coinCounter").gameObject;
+        coinText = coinCounter.transform.Find("coinText").gameObject;
+
         StartCoroutine(UpdatePath());
     }
 
@@ -121,6 +134,22 @@ public class EnemyFollow : MonoBehaviour
         else
         {
             gameObject.GetComponent<CharacterShoot>().fireWeapon();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PlayerProjectile")
+        {
+            stats.CurrentHealth -= collision.gameObject.GetComponent<ProjectileController>().damage;
+            Destroy(collision.gameObject);
+            if (stats.CurrentHealth == 0)
+            {
+                //TODO die
+                target.gameObject.GetComponent<CharacterStats>().Money += stats.Money;
+                coinText.GetComponent<Text>().text = playerStats.Money.ToString();
+                Destroy(gameObject);
+            }
         }
     }
 }

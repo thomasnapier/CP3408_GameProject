@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2d;
     public int acceleration;
     public GameObject director;
+    public Slider lifeBar;
 
     Vector3 mousePositionInWorld;
     float angle;
@@ -19,6 +21,8 @@ public class PlayerController : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();     //assigns the rigidbody to the rb2d variable
         stats = gameObject.GetComponent<CharacterStats>();
+        lifeBar.maxValue = stats.MaxHealth;
+        lifeBar.value = stats.CurrentHealth;
     }
 
     void FixedUpdate()
@@ -43,6 +47,21 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Fire1"))
         {
             gameObject.GetComponent<CharacterShoot>().fireWeapon();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "EnemyProjectile")
+        {
+            stats.CurrentHealth -= collision.gameObject.GetComponent<ProjectileController>().damage;
+            lifeBar.value = stats.CurrentHealth;
+            Destroy(collision.gameObject);
+            if (stats.CurrentHealth == 0)
+            {
+                //TODO die
+
+            }
         }
     }
 }

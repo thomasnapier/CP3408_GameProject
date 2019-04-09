@@ -12,16 +12,19 @@ public class BuyItem : MonoBehaviour
     public GameObject boughtOverlay;
     public GameObject prefab;
     public GameObject instantiation;
+    private CharacterStats playerStats;
     public int itemValue;
     int playerCoins;
 
     void Awake()
     {
+        playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
         canvas = GameObject.FindGameObjectWithTag("canvas");
         healthSlider = canvas.transform.Find("healthSlider").gameObject;
         coinCounter = healthSlider.transform.Find("coinCounter").gameObject;
         coinText = coinCounter.transform.Find("coinText").gameObject;
-        playerCoins = int.Parse(coinText.GetComponent<Text>().text);
+        coinText.GetComponent<Text>().text = playerStats.Money.ToString();
+        //playerCoins = int.Parse(coinText.GetComponent<Text>().text);
         boughtOverlay = gameObject.transform.Find("boughtOverlay").gameObject;
         boughtOverlay.SetActive(false);
     }
@@ -34,10 +37,11 @@ public class BuyItem : MonoBehaviour
 
     private void SubtractItemValue()
     {
-        if(itemValue < playerCoins)
+        if(itemValue < playerStats.Money)
         {
-            playerCoins -= itemValue;
-            coinText.GetComponent<Text>().text = playerCoins.ToString();
+            playerStats.Money -= itemValue;
+
+            coinText.GetComponent<Text>().text = playerStats.Money.ToString();
             boughtOverlay.SetActive(true);
         }
     }

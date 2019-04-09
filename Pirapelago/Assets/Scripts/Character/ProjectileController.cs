@@ -10,6 +10,7 @@ public class ProjectileController : MonoBehaviour
     public Vector2 direction;
     [SerializeField]
     private float destroyTime;
+    public float damage;
 
 
     void Start()
