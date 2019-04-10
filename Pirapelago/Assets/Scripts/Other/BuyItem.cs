@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BuyItem : MonoBehaviour
 {
@@ -23,8 +24,7 @@ public class BuyItem : MonoBehaviour
         healthSlider = canvas.transform.Find("healthSlider").gameObject;
         coinCounter = healthSlider.transform.Find("coinCounter").gameObject;
         coinText = coinCounter.transform.Find("coinText").gameObject;
-        coinText.GetComponent<Text>().text = playerStats.Money.ToString();
-        //playerCoins = int.Parse(coinText.GetComponent<Text>().text);
+        coinText.GetComponent<TextMeshProUGUI>().text = playerStats.Money.ToString();
         boughtOverlay = gameObject.transform.Find("boughtOverlay").gameObject;
         boughtOverlay.SetActive(false);
     }
@@ -41,7 +41,7 @@ public class BuyItem : MonoBehaviour
         {
             playerStats.Money -= itemValue;
 
-            coinText.GetComponent<Text>().text = playerStats.Money.ToString();
+            coinText.GetComponent<TextMeshProUGUI>().text = playerStats.Money.ToString();
             boughtOverlay.SetActive(true);
         }
     }

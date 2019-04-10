@@ -2,6 +2,7 @@
 using Pathfinding;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Seeker))]
@@ -147,7 +148,7 @@ public class EnemyFollow : MonoBehaviour
             {
                 //TODO die
                 target.gameObject.GetComponent<CharacterStats>().Money += stats.Money;
-                coinText.GetComponent<Text>().text = playerStats.Money.ToString();
+                coinText.GetComponent<TextMeshProUGUI>().text = playerStats.Money.ToString();
                 Destroy(gameObject);
             }
         }
