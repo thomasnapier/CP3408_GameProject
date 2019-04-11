@@ -11,8 +11,6 @@ public class BuyItem : MonoBehaviour
     public GameObject healthSlider;
     public GameObject coinCounter;
     public GameObject boughtOverlay;
-    public GameObject prefab;
-    public GameObject instantiation;
     private CharacterStats playerStats;
     public int itemValue;
     int playerCoins;
