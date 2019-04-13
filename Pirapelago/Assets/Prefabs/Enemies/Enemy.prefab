@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 439886619240034854}
   - component: {fileID: 5748582113309605287}
   - component: {fileID: 1463579209325642349}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8093018199910203660}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bulletSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

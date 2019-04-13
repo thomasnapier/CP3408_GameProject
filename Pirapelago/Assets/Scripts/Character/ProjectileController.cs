@@ -18,7 +18,6 @@ public class ProjectileController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         //Adds force to the bullet Rigidbody component
         rb2d.AddForce(direction * speed);
-        Physics.IgnoreLayerCollision(9, 9);
     }
 
     void FixedUpdate()
