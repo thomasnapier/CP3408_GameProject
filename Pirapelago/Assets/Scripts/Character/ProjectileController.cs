@@ -32,6 +32,7 @@ public class ProjectileController : MonoBehaviour
         {
             Instantiate(splashObject, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject, 0);
+
         }
     }
 

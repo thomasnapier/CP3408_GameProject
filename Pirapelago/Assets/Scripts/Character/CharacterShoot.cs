@@ -21,11 +21,14 @@ public class CharacterShoot : MonoBehaviour
     public GameObject explosionObject;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
         BulletSpawn = gameObject.transform.Find("bulletSpawner");
         stats = gameObject.GetComponent<CharacterStats>();
+
+
     }
 
     // Update is called once per frame
@@ -54,7 +57,7 @@ public class CharacterShoot : MonoBehaviour
                         break;
                     }
 
-                case 1: //god mode
+                case 1: //triple mode
                     {
 
                         //make vector of ship direction
@@ -122,6 +125,45 @@ public class CharacterShoot : MonoBehaviour
                         bullet8.GetComponent<ProjectileController>().direction = fireVector0;                   
                         break;
                     }
+                case 3: //explosive shot
+                    {
+                        //make vector of ship direction
+                        fireVector0 = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
+                        //create a new cannonball on the bulletSpawn
+                        shot.transform.localScale = new Vector3(0.3f, 0.3f, 0);
+                        nextFire = Time.time + stats.FireRate;
+                        stats.FireRate = 3;
+                        var bullet = Instantiate(shot, BulletSpawn.position, BulletSpawn.rotation);
+                        bullet.GetComponent<ProjectileController>().direction = fireVector0;
+
+                        //when main bullet gets destroyed, make 4 new bullets from its destroy position
+                        if (gameObject == null)
+                        {
+
+                            fireVector1 = new Vector2(gameObject.transform.position.x - transform.position.x, gameObject.transform.position.y - transform.position.y);
+                            fireVector2 = new Vector2(gameObject.transform.position.x - transform.position.x, gameObject.transform.position.y - transform.position.y);
+                            fireVector3 = new Vector2(gameObject.transform.position.x - transform.position.x, gameObject.transform.position.y - transform.position.y);
+                            fireVector4 = new Vector2(gameObject.transform.position.x - transform.position.x, gameObject.transform.position.y - transform.position.y);
+
+                            fireVector1 = RotateVector(fireVector1, -90);
+                            fireVector2 = RotateVector(fireVector2, 90);
+                            fireVector3 = RotateVector(fireVector3, 60);
+                            fireVector4 = RotateVector(fireVector4, -60);
+
+                            var bullet1 = Instantiate(shot, gameObject.transform.position, gameObject.transform.rotation);
+                            var bullet2 = Instantiate(shot, gameObject.transform.position, gameObject.transform.rotation);
+                            var bullet3 = Instantiate(shot, gameObject.transform.position, gameObject.transform.rotation);
+                            var bullet4 = Instantiate(shot, gameObject.transform.position, gameObject.transform.rotation);
+
+                            bullet1.GetComponent<ProjectileController>().direction = fireVector1;
+                            bullet2.GetComponent<ProjectileController>().direction = fireVector2;
+                            bullet3.GetComponent<ProjectileController>().direction = fireVector3;
+                            bullet4.GetComponent<ProjectileController>().direction = fireVector4;
+
+                        }
+                        break;
+                    }
+                    
             }
 
         }

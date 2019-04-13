@@ -24,9 +24,17 @@ public class EnterShop : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            ContinueGame();
+        }
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || !isPaused)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             ContinueGame();
         }
@@ -34,6 +42,7 @@ public class EnterShop : MonoBehaviour
 
     public void PauseGame()
     {
+        Debug.Log("is puased");
         shopUI.SetActive(true);
         Time.timeScale = 0;
         isPaused = true;
@@ -41,6 +50,7 @@ public class EnterShop : MonoBehaviour
 
     public void ContinueGame()
     {
+        Debug.Log("is not puahsed");
         shopUI.SetActive(false);
         Time.timeScale = 1;
         isPaused = false;

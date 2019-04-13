@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 242355404103357571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.66, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_Children:
   - {fileID: 5127628391479417586}
   m_Father: {fileID: 0}
@@ -146,11 +146,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2965873108141164853}
     m_Modifications:
-    - target: {fileID: 8173962850679156067, guid: 35f46762e94bb754cb687111db1785e2,
-        type: 3}
-      propertyPath: m_Name
-      value: ProjectileParticals
-      objectReference: {fileID: 0}
     - target: {fileID: 608294798572206807, guid: 35f46762e94bb754cb687111db1785e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -205,6 +200,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173962850679156067, guid: 35f46762e94bb754cb687111db1785e2,
+        type: 3}
+      propertyPath: m_Name
+      value: ProjectileParticals
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35f46762e94bb754cb687111db1785e2, type: 3}
