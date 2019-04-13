@@ -27,7 +27,6 @@ public class ShopItemSpawner : MonoBehaviour
         int prefabIndex = UnityEngine.Random.Range(0, 7);
         instantiation = Instantiate(prefabs[prefabIndex], gameObject.transform.position, gameObject.transform.rotation);
         instantiation.transform.SetParent(gameObject.transform, false);
-        instantiation.transform.position = gameObject.transform.position;
-        
+        instantiation.transform.position = gameObject.transform.position;        
     }
 }
