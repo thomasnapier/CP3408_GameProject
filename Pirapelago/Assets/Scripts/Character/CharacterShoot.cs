@@ -11,6 +11,8 @@ public class CharacterShoot : MonoBehaviour
     private Vector2 fireVector1;
     private Vector2 fireVector2;
     private CharacterStats stats;
+    public GameObject explosionObject;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,26 +29,27 @@ public class CharacterShoot : MonoBehaviour
 
     public void fireWeapon(int weaponType)
     {
-        switch (weaponType)
+        if (Time.time > nextFire)
         {
-            case 0:
-                {
-                    if (Time.time > nextFire)
+            Instantiate(explosionObject, BulletSpawn.position, BulletSpawn.rotation);
+            switch (weaponType)
+            {
+                case 0:
                     {
+
                         //make vector of ship direction
                         fireVector0 = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
                         //create a new cannonball on the bulletSpawn
                         nextFire = Time.time + stats.FireRate;
                         var bullet = Instantiate(shot, BulletSpawn.position, BulletSpawn.rotation);
                         bullet.GetComponent<ProjectileController>().direction = fireVector0;
+                        
+                        break;
                     }
-                    break;
-                }
 
-            case 1:
-                {
-                    if (Time.time > nextFire)
+                case 1:
                     {
+
                         //make vector of ship direction
                         fireVector0 = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
                         fireVector1 = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
@@ -62,10 +65,10 @@ public class CharacterShoot : MonoBehaviour
                         bullet0.GetComponent<ProjectileController>().direction = fireVector0;
                         bullet1.GetComponent<ProjectileController>().direction = fireVector1;
                         bullet2.GetComponent<ProjectileController>().direction = fireVector2;
+                        
+                        break;
                     }
-                    break;
-                }
-
+            }
 
         }
     }

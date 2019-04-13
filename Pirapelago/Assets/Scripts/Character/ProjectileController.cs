@@ -11,6 +11,8 @@ public class ProjectileController : MonoBehaviour
     [SerializeField]
     private float destroyTime;
     public float damage;
+    public float time;
+    public GameObject splashObject;
 
 
     void Start()
@@ -18,11 +20,18 @@ public class ProjectileController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         //Adds force to the bullet Rigidbody component
         rb2d.AddForce(direction * speed);
+        //Destroy(gameObject, destroyTime);
     }
 
     void FixedUpdate()
     {
         //Destroy the cannonball after an amount of time
-        Destroy(gameObject, destroyTime);
+        //Destroy(gameObject, destroyTime);
+        time += Time.deltaTime;
+        if (time >= destroyTime)
+        {
+            Instantiate(splashObject, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(gameObject, 0);
+        }
     }
 }
