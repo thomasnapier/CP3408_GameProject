@@ -43,4 +43,9 @@ public class BuyItem : MonoBehaviour
             boughtOverlay.SetActive(true);
         }
     }
+
+    public void ChangeWeaponType(int wepType)
+    {
+        playerStats.WeaponType = wepType;
+    }
 }
