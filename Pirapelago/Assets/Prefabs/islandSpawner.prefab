@@ -46,7 +46,10 @@ MonoBehaviour:
   island1: {fileID: 3183973196424404022, guid: eb567c0c795d68c479414ed587bc6243, type: 3}
   island2: {fileID: 3078778444363383643, guid: a07cbaf264d27a84f8fc76c81538b71f, type: 3}
   island3: {fileID: 8480134832357092662, guid: ddc415dcd75dd4d468b52689e4a49f83, type: 3}
+  skullIsland: {fileID: 3183973196424404022, guid: d82c2f887a5bf1f438d4e6f9ae5d276f,
+    type: 3}
   islandCount: 3
   island1SpawnRate: 30
   island2SpawnRate: 60
   island3SpawnRate: 80
+  islandSkullSpawnRate: 100

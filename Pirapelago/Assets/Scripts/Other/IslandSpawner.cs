@@ -7,27 +7,32 @@ public class IslandSpawner : MonoBehaviour
     public GameObject island1;
     public GameObject island2;
     public GameObject island3;
+    public GameObject skullIsland;
 
-    public int islandCount = 3;
+    public int islandCount = 4;
 
-    public int island1SpawnRate, island2SpawnRate, island3SpawnRate;
+    public int island1SpawnRate, island2SpawnRate, island3SpawnRate, islandSkullSpawnRate;
 
 
     void Awake()
     {
         int randomNum = Random.Range(0, 100);
         Debug.Log(randomNum);
-        if(randomNum > 0 && randomNum < island1SpawnRate)
+        if (randomNum > 0 && randomNum < island1SpawnRate)
         {
             Instantiate(island1, GetComponent<Transform>().position, Quaternion.identity);
         }
-        else if(randomNum > island1SpawnRate && randomNum < island2SpawnRate)
+        else if (randomNum > island1SpawnRate && randomNum < island2SpawnRate)
         {
             Instantiate(island2, GetComponent<Transform>().position, Quaternion.identity);
         }
-        else if(randomNum > island2SpawnRate && randomNum < island3SpawnRate)
+        else if (randomNum > island2SpawnRate && randomNum < island3SpawnRate)
         {
             Instantiate(island3, GetComponent<Transform>().position, Quaternion.identity);
+        }
+        else if (randomNum > island3SpawnRate && randomNum < islandSkullSpawnRate)
+        {
+            Instantiate(skullIsland, GetComponent<Transform>().position, Quaternion.identity);
         }
 
 
