@@ -119,11 +119,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1789102096}
     m_Modifications:
-    - target: {fileID: 8173962850679156067, guid: 237f5cf7859f1b041878f5457a7d623c,
-        type: 3}
-      propertyPath: m_Name
-      value: ShipSplashParticals
-      objectReference: {fileID: 0}
     - target: {fileID: 608294798572206807, guid: 237f5cf7859f1b041878f5457a7d623c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -178,6 +173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173962850679156067, guid: 237f5cf7859f1b041878f5457a7d623c,
+        type: 3}
+      propertyPath: m_Name
+      value: ShipSplashParticals
       objectReference: {fileID: 0}
     - target: {fileID: 8611202190090492450, guid: 237f5cf7859f1b041878f5457a7d623c,
         type: 3}
@@ -2245,6 +2245,12 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1789102096}
+    - target: {fileID: 439886619240034848, guid: d0951552abeb6874bbe715c366cb49c5,
+        type: 3}
+      propertyPath: chainShot
+      value: 
+      objectReference: {fileID: 242355404103357571, guid: 5dc3d1ffc79da7a4a91f77519bfcab7b,
+        type: 3}
     - target: {fileID: 1463579209325642349, guid: d0951552abeb6874bbe715c366cb49c5,
         type: 3}
       propertyPath: shot
@@ -2535,7 +2541,7 @@ MonoBehaviour:
   rotationSpeed: 5
   money: 0
   fireRate: 0.01
-  weaponType: 1
+  weaponType: 4
 --- !u!114 &1789102101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2549,6 +2555,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shot: {fileID: 242355404103357571, guid: d19e81aa5246d1641bb47441d3eefd96, type: 3}
+  tripleShot: {fileID: 242355404103357571, guid: 5163dbea31c1bc249bcb3ee458a61c09,
+    type: 3}
+  grapeShot: {fileID: 242355404103357571, guid: 8f65b5d03531a9546b55c5e3a9d5cfde,
+    type: 3}
+  explosiveShot: {fileID: 242355404103357571, guid: 9d6b0b4f9430d614dbeab5cd72ad8c90,
+    type: 3}
+  chainShot: {fileID: 242355404103357571, guid: 5dc3d1ffc79da7a4a91f77519bfcab7b,
+    type: 3}
   explosionObject: {fileID: 8173962850679156067, guid: ebf5807cc5b864348a63a5e88b0877c4,
     type: 3}
 --- !u!58 &1789102102

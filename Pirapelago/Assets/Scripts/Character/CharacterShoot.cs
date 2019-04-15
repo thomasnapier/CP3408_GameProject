@@ -8,6 +8,7 @@ public class CharacterShoot : MonoBehaviour
     public GameObject tripleShot;
     public GameObject grapeShot;
     public GameObject explosiveShot;
+    public GameObject chainShot;
     private Transform BulletSpawn;
     private float nextFire;
     private Vector2[] fireVectors = new Vector2[9];
@@ -39,7 +40,7 @@ public class CharacterShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void fireWeapon(int weaponType)
@@ -111,6 +112,17 @@ public class CharacterShoot : MonoBehaviour
                         nextFire = Time.time + stats.FireRate;
                         stats.FireRate = 3;
                         var bullet = Instantiate(explosiveShot, BulletSpawn.position, BulletSpawn.rotation);
+                        bullet.GetComponent<ProjectileController>().direction = fireVector0;
+                        break;
+                    }
+                case 4: //chain shot
+                    {
+                        //make vector of ship direction
+                        fireVector0 = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
+                        //create a new cannonball on the bulletSpawn
+                        nextFire = Time.time + stats.FireRate;
+                        stats.FireRate = 3;
+                        var bullet = Instantiate(chainShot, BulletSpawn.position, BulletSpawn.rotation);
                         bullet.GetComponent<ProjectileController>().direction = fireVector0;
                         break;
                     }

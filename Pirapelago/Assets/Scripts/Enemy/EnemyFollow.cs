@@ -143,9 +143,13 @@ public class EnemyFollow : MonoBehaviour
         if (collision.tag == "PlayerProjectile")
         {
             stats.CurrentHealth -= collision.gameObject.GetComponent<ProjectileController>().damage;
-            Destroy(collision.gameObject);
+            if (!collision.gameObject.GetComponent<ProjectileController>().piercing)
+            {
+                Destroy(collision.gameObject);
+            }
             if (stats.CurrentHealth == 0)
             {
+
                 //TODO die
                 if (!dead)
                 {

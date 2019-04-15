@@ -14,6 +14,7 @@ public class ProjectileController : MonoBehaviour
     public float time;
     public GameObject splashObject;
     public bool explodes;
+    public bool piercing;
 
 
     void Start()
