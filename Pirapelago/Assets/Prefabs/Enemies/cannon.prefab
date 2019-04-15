@@ -99,6 +99,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shot: {fileID: 242355404103357571, guid: 0fb266c146ddae84481aa5174275aafd, type: 3}
+  tripleShot: {fileID: 242355404103357571, guid: ea58ae7e92cf3ba4bbaef9639d82ac76,
+    type: 3}
+  grapeShot: {fileID: 242355404103357571, guid: d8931058d56d70247afa174d3b47ad91,
+    type: 3}
+  explosiveShot: {fileID: 242355404103357571, guid: 31a645928356ec44f80b0e674a0b22d3,
+    type: 3}
   explosionObject: {fileID: 8173962850679156067, guid: ebf5807cc5b864348a63a5e88b0877c4,
     type: 3}
 --- !u!114 &3446443157354897335

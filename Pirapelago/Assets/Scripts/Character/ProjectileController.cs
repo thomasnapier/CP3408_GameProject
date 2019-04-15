@@ -13,6 +13,7 @@ public class ProjectileController : MonoBehaviour
     public float damage;
     public float time;
     public GameObject splashObject;
+    public bool explodes;
 
 
     void Start()
@@ -31,6 +32,10 @@ public class ProjectileController : MonoBehaviour
         if (time >= destroyTime)
         {
             Instantiate(splashObject, gameObject.transform.position, gameObject.transform.rotation);
+            if (explodes)
+            {
+                gameObject.GetComponent<ShotExplode>().explode();
+            }
             Destroy(gameObject, 0);
 
         }

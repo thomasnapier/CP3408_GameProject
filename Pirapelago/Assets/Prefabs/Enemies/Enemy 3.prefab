@@ -207,6 +207,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shot: {fileID: 242355404103357571, guid: 0fb266c146ddae84481aa5174275aafd, type: 3}
+  tripleShot: {fileID: 242355404103357571, guid: f3f2efd28e1be784eadeb2b3dfc4e1d4,
+    type: 3}
+  grapeShot: {fileID: 242355404103357571, guid: d8931058d56d70247afa174d3b47ad91,
+    type: 3}
+  explosiveShot: {fileID: 242355404103357571, guid: 31a645928356ec44f80b0e674a0b22d3,
+    type: 3}
   explosionObject: {fileID: 8173962850679156067, guid: ebf5807cc5b864348a63a5e88b0877c4,
     type: 3}
 --- !u!1 &8685650118212502638
@@ -246,11 +252,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 439886619240034853}
     m_Modifications:
-    - target: {fileID: 8173962850679156067, guid: 237f5cf7859f1b041878f5457a7d623c,
-        type: 3}
-      propertyPath: m_Name
-      value: ShipSplashParticals
-      objectReference: {fileID: 0}
     - target: {fileID: 608294798572206807, guid: 237f5cf7859f1b041878f5457a7d623c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -305,6 +306,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173962850679156067, guid: 237f5cf7859f1b041878f5457a7d623c,
+        type: 3}
+      propertyPath: m_Name
+      value: ShipSplashParticals
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 237f5cf7859f1b041878f5457a7d623c, type: 3}
