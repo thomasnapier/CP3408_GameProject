@@ -8,10 +8,9 @@ public class ShotExplode : MonoBehaviour
     private GameObject shrapnel;
     private Vector2[] fireVectors = new Vector2[4];
     private GameObject[] bullets = new GameObject[4];
-    private Vector2 fireVector0;
-    private Vector2 fireVector1;
-    private Vector2 fireVector2;
-    private Vector2 fireVector3;
+    [SerializeField]
+    private GameObject explosionObject;
+
 
     //when main bullet gets destroyed, make 4 new bullets from its destroy position
     public void explode()
@@ -20,6 +19,7 @@ public class ShotExplode : MonoBehaviour
         fireVectors[1] = new Vector2(1, -1);
         fireVectors[2] = new Vector2(-1, 1);
         fireVectors[3] = new Vector2(-1, -1);
+        Instantiate(explosionObject, gameObject.transform.position, gameObject.transform.rotation);
 
         for (int i = 0; i < 4; i++)
         {

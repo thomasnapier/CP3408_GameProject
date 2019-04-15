@@ -38,7 +38,7 @@ public class EnemyFollow : MonoBehaviour
     public GameObject coinCounter;
     public GameObject coinText;
     private CharacterStats playerStats;
-
+    private bool dead = false;
 
 
     private CharacterStats stats;
@@ -147,9 +147,14 @@ public class EnemyFollow : MonoBehaviour
             if (stats.CurrentHealth == 0)
             {
                 //TODO die
-                target.gameObject.GetComponent<CharacterStats>().Money += stats.Money;
-                coinText.GetComponent<TextMeshProUGUI>().text = playerStats.Money.ToString();
-                Destroy(gameObject);
+                if (!dead)
+                {
+                    dead = true;
+                    target.gameObject.GetComponent<CharacterStats>().Money += stats.Money;
+                    ScoreManager.score += stats.Money;
+                    coinText.GetComponent<TextMeshProUGUI>().text = playerStats.Money.ToString();
+                    Destroy(gameObject);
+                }
             }
         }
     }

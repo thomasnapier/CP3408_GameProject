@@ -154,6 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrapnel: {fileID: 242355404103357571, guid: d8931058d56d70247afa174d3b47ad91, type: 3}
+  explosionObject: {fileID: 8173962850679156067, guid: ebf5807cc5b864348a63a5e88b0877c4,
+    type: 3}
 --- !u!114 &6321262215628333772
 MonoBehaviour:
   m_ObjectHideFlags: 0
