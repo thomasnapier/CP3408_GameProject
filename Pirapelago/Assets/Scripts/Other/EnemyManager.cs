@@ -28,7 +28,11 @@ public class EnemyManager : MonoBehaviour
             spawnPointIndex = Random.Range(0, spawnPoints.Length);
             if (spawnPoints[spawnPointIndex].gameObject.GetComponent<OverlapDetect>().collisions == 0)
             {
-                Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+                var newEnemy = Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+                var stats = newEnemy.GetComponent<CharacterStats>();
+                stats.FireRate = (float)System.Math.Pow(0.95, TimeManager.min) + 1;
+                stats.Speed = 300 + (10 * TimeManager.min);
+                stats.MaxHealth = 20 + (10 * TimeManager.min);
                 spawned = false;
             }
         }

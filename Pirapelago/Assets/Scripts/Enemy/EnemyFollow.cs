@@ -39,6 +39,9 @@ public class EnemyFollow : MonoBehaviour
     public GameObject coinText;
     private CharacterStats playerStats;
     private bool dead = false;
+    public bool isBoss;
+    [SerializeField]
+    GameObject endPool;
 
 
     private CharacterStats stats;
@@ -157,6 +160,12 @@ public class EnemyFollow : MonoBehaviour
                     target.gameObject.GetComponent<CharacterStats>().Money += stats.Money;
                     ScoreManager.score += stats.Money;
                     coinText.GetComponent<TextMeshProUGUI>().text = playerStats.Money.ToString();
+
+                    if (isBoss)
+                    {
+                        Instantiate(endPool, transform.position, transform.rotation);
+                    }
+
                     Destroy(gameObject);
                 }
             }
