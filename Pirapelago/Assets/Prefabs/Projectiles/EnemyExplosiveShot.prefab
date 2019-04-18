@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58ccf8cebab75240b65a102b9eb2bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 250
   direction: {x: 0, y: 0}
   destroyTime: 2
   damage: 20
@@ -141,6 +141,7 @@ MonoBehaviour:
   splashObject: {fileID: 8173962850679156067, guid: 516a95f17f609064d9c9ab65e26d3952,
     type: 3}
   explodes: 1
+  piercing: 0
 --- !u!114 &8200173245582919584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2965873108141164853}
     m_Modifications:
+    - target: {fileID: 8173962850679156067, guid: 35f46762e94bb754cb687111db1785e2,
+        type: 3}
+      propertyPath: m_Name
+      value: ProjectileParticals
+      objectReference: {fileID: 0}
     - target: {fileID: 608294798572206807, guid: 35f46762e94bb754cb687111db1785e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -230,11 +236,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8173962850679156067, guid: 35f46762e94bb754cb687111db1785e2,
-        type: 3}
-      propertyPath: m_Name
-      value: ProjectileParticals
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35f46762e94bb754cb687111db1785e2, type: 3}

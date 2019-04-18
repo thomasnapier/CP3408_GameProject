@@ -3389,7 +3389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42e28e3cdbdf6546957a0fa7a0c5366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 100
+  currentHealth: 10000
   maxHealth: 100
   speed: 3
   rotationSpeed: 5
@@ -3415,7 +3415,8 @@ MonoBehaviour:
     type: 3}
   explosiveShot: {fileID: 242355404103357571, guid: 9d6b0b4f9430d614dbeab5cd72ad8c90,
     type: 3}
-  chainShot: {fileID: 0}
+  chainShot: {fileID: 242355404103357571, guid: 5dc3d1ffc79da7a4a91f77519bfcab7b,
+    type: 3}
   explosionObject: {fileID: 8173962850679156067, guid: ebf5807cc5b864348a63a5e88b0877c4,
     type: 3}
 --- !u!58 &1789102102
@@ -3433,7 +3434,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 9
+  m_Radius: 5.53
 --- !u!1 &1855237022
 GameObject:
   m_ObjectHideFlags: 0

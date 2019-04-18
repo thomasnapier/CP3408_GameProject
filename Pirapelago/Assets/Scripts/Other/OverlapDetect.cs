@@ -6,12 +6,12 @@ public class OverlapDetect : MonoBehaviour
 {
     public int collisions = 0;
 
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         collisions++;
     }
 
-    void OnCollisionExit(Collision collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         collisions--;
     }

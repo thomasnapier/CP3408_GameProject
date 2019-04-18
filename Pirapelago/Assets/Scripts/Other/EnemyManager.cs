@@ -33,6 +33,7 @@ public class EnemyManager : MonoBehaviour
                 stats.FireRate = (float)System.Math.Pow(0.95, TimeManager.min) + 1;
                 stats.Speed = 300 + (10 * TimeManager.min);
                 stats.MaxHealth = 20 + (10 * TimeManager.min);
+                stats.CurrentHealth = stats.MaxHealth;
                 spawned = false;
             }
         }

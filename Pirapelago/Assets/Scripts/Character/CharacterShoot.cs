@@ -45,7 +45,7 @@ public class CharacterShoot : MonoBehaviour
                     {
 
                         //make vector of ship direction
-                        fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
+                        fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
                         //create a new cannonball on the bulletSpawn
                         nextFire = Time.time + stats.FireRate;
                         bullets[0] = Instantiate(shot, BulletSpawn.position, BulletSpawn.rotation);
@@ -59,7 +59,7 @@ public class CharacterShoot : MonoBehaviour
                         //make vector of ship direction
                         for (int i = 0; i < 3; i++)
                         {
-                            fireVectors[i] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
+                            fireVectors[i] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
                             bullets[i] = Instantiate(tripleShot, BulletSpawn.position, BulletSpawn.rotation);
 
 
@@ -80,7 +80,7 @@ public class CharacterShoot : MonoBehaviour
                     {
                         //make vector of ship direction
                         //create a new cannonball on the bulletSpawn
-                        fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
+                        fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
 
                         for (int i = 1; i < 9; i++)
                         {
@@ -90,7 +90,7 @@ public class CharacterShoot : MonoBehaviour
                         }
 
                         //make vector of ship direction
-                        fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
+                        fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
                         //create a new cannonball on the bulletSpawn
                         nextFire = Time.time + stats.FireRate;
                         break;
@@ -98,7 +98,7 @@ public class CharacterShoot : MonoBehaviour
                 case 3: //explosive shot
                     {
                         //make vector of ship direction
-                        fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
+                        fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
                         //create a new cannonball on the bulletSpawn
                         nextFire = Time.time + stats.FireRate;
                         stats.FireRate = 3;
@@ -109,7 +109,7 @@ public class CharacterShoot : MonoBehaviour
                 case 4: //chain shot
                     {
                         //make vector of ship direction
-                        fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y);
+                        fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
                         //create a new cannonball on the bulletSpawn
                         nextFire = Time.time + stats.FireRate;
                         stats.FireRate = 3;
