@@ -14,112 +14,112 @@ public class PlayerEquipment : MonoBehaviour
     private static int hullLevel = 1;
     private CharacterStats playerStats;
 
-    private void Start()
+    private void Update()
     {
         updatePlayerStats();
     }
 
     public static int BasicShotLevel
     {
-        get { return BasicShotLevel; }
+        get { return basicShotLevel; }
 
         set
         {
             if (value < 0)
-                BasicShotLevel = 0;
+                basicShotLevel = 0;
             else
-                BasicShotLevel = value;
+                basicShotLevel = value;
         }
     }
 
     public static int TripleShotLevel
     {
-        get { return TripleShotLevel; }
+        get { return tripleShotLevel; }
 
         set
         {
             if (value < 0)
-                TripleShotLevel = 0;
+                tripleShotLevel = 0;
             else
-                TripleShotLevel = value;
+                tripleShotLevel = value;
         }
     }
 
     public static int GrapeShotLevel
     {
-        get { return GrapeShotLevel; }
+        get { return grapeShotLevel; }
 
         set
         {
             if (value < 0)
-                GrapeShotLevel = 0;
+                grapeShotLevel = 0;
             else
-                GrapeShotLevel = value;
+                grapeShotLevel = value;
         }
     }
 
     public static int ChainShotLevel
     {
-        get { return ChainShotLevel; }
+        get { return chainShotLevel; }
 
         set
         {
             if (value < 0)
-                ChainShotLevel = 0;
+                chainShotLevel = 0;
             else
-                ChainShotLevel = value;
+                chainShotLevel = value;
         }
     }
 
     public static int ExplosionShotLevel
     {
-        get { return ExplosionShotLevel; }
+        get { return explosionShotLevel; }
 
         set
         {
             if (value < 0)
-                ExplosionShotLevel = 0;
+                explosionShotLevel = 0;
             else
-                ExplosionShotLevel = value;
+                explosionShotLevel = value;
         }
     }
 
     public static int SailLevel
     {
-        get { return SailLevel; }
+        get { return sailLevel; }
 
         set
         {
             if (value < 0)
-                SailLevel = 0;
+                sailLevel = 0;
             else
-                SailLevel = value;
+                sailLevel = value;
         }
     }
 
     public static int RudderLevel
     {
-        get { return RudderLevel; }
+        get { return rudderLevel; }
 
         set
         {
             if (value < 0)
-                RudderLevel = 0;
+                rudderLevel = 0;
             else
-                RudderLevel = value;
+                rudderLevel = value;
         }
     }
 
     public static int HullLevel
     {
-        get { return HullLevel; }
+        get { return hullLevel; }
 
         set
         {
             if (value < 0)
-                HullLevel = 0;
+                hullLevel = 0;
             else
-                HullLevel = value;
+                hullLevel = value;
         }
     }
 
