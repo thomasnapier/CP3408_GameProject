@@ -8,6 +8,7 @@ TagManager:
   - canvas
   - PlayerProjectile
   - EnemyProjectile
+  - BossSpawner
   layers:
   - Default
   - TransparentFX

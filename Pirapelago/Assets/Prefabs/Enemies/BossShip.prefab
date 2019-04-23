@@ -178,8 +178,13 @@ MonoBehaviour:
   speed: 100
   rotationSpeed: 5
   money: 10
-  fireRate: 1
   weaponType: 0
+  weaponFireRate:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!114 &3615759345914760113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,17 +323,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 608294798572206807, guid: 237f5cf7859f1b041878f5457a7d623c,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 608294798572206807, guid: 237f5cf7859f1b041878f5457a7d623c,
+        type: 3}
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 608294798572206807, guid: 237f5cf7859f1b041878f5457a7d623c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 608294798572206807, guid: 237f5cf7859f1b041878f5457a7d623c,
-        type: 3}
-      propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

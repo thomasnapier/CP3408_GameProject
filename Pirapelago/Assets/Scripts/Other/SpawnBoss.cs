@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class SpawnBoss : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject boss;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,6 +16,7 @@ public class SpawnBoss : MonoBehaviour
 
     public void spawnBoss()
     {
-
+        Instantiate(boss, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }
