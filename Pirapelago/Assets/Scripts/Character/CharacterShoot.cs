@@ -47,7 +47,7 @@ public class CharacterShoot : MonoBehaviour
                         //make vector of ship direction
                         fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
                         //create a new cannonball on the bulletSpawn
-                        nextFire = Time.time + stats.FireRate;
+                        nextFire = Time.time + stats.WeaponFireRate[0];
                         bullets[0] = Instantiate(shot, BulletSpawn.position, BulletSpawn.rotation);
                         bullets[0].GetComponent<ProjectileController>().direction = fireVectors[0];
                         
@@ -72,7 +72,7 @@ public class CharacterShoot : MonoBehaviour
                         {
                             bullets[i].GetComponent<ProjectileController>().direction = fireVectors[i];
                         }
-                        nextFire = Time.time + stats.FireRate;
+                        nextFire = Time.time + stats.WeaponFireRate[1];
                         
                         break;
                     }
@@ -92,7 +92,7 @@ public class CharacterShoot : MonoBehaviour
                         //make vector of ship direction
                         fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
                         //create a new cannonball on the bulletSpawn
-                        nextFire = Time.time + stats.FireRate;
+                        nextFire = Time.time + stats.WeaponFireRate[2];
                         break;
                     }
                 case 3: //explosive shot
@@ -100,8 +100,7 @@ public class CharacterShoot : MonoBehaviour
                         //make vector of ship direction
                         fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
                         //create a new cannonball on the bulletSpawn
-                        nextFire = Time.time + stats.FireRate;
-                        stats.FireRate = 3;
+                        nextFire = Time.time + stats.WeaponFireRate[3];
                         var bullet = Instantiate(explosiveShot, BulletSpawn.position, BulletSpawn.rotation);
                         bullet.GetComponent<ProjectileController>().direction = fireVectors[0];
                         break;
@@ -111,8 +110,7 @@ public class CharacterShoot : MonoBehaviour
                         //make vector of ship direction
                         fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
                         //create a new cannonball on the bulletSpawn
-                        nextFire = Time.time + stats.FireRate;
-                        stats.FireRate = 3;
+                        nextFire = Time.time + stats.WeaponFireRate[4];
                         var bullet = Instantiate(chainShot, BulletSpawn.position, BulletSpawn.rotation);
                         bullet.GetComponent<ProjectileController>().direction = fireVectors[0];
                         break;

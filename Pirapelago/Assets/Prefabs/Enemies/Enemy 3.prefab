@@ -147,6 +147,8 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   coinCounter: {fileID: 0}
   coinText: {fileID: 0}
+  isBoss: 0
+  endPool: {fileID: 0}
 --- !u!114 &439886619240034854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +196,12 @@ MonoBehaviour:
   money: 1
   fireRate: 1
   weaponType: 3
+  weaponFireRate:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!114 &1463579209325642349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +221,7 @@ MonoBehaviour:
     type: 3}
   explosiveShot: {fileID: 242355404103357571, guid: 31a645928356ec44f80b0e674a0b22d3,
     type: 3}
+  chainShot: {fileID: 0}
   explosionObject: {fileID: 8173962850679156067, guid: ebf5807cc5b864348a63a5e88b0877c4,
     type: 3}
 --- !u!1 &8685650118212502638
@@ -252,6 +261,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 439886619240034853}
     m_Modifications:
+    - target: {fileID: 8173962850679156067, guid: 237f5cf7859f1b041878f5457a7d623c,
+        type: 3}
+      propertyPath: m_Name
+      value: ShipSplashParticals
+      objectReference: {fileID: 0}
     - target: {fileID: 608294798572206807, guid: 237f5cf7859f1b041878f5457a7d623c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -306,11 +320,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8173962850679156067, guid: 237f5cf7859f1b041878f5457a7d623c,
-        type: 3}
-      propertyPath: m_Name
-      value: ShipSplashParticals
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 237f5cf7859f1b041878f5457a7d623c, type: 3}

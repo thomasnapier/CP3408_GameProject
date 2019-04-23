@@ -105,6 +105,7 @@ MonoBehaviour:
     type: 3}
   explosiveShot: {fileID: 242355404103357571, guid: 31a645928356ec44f80b0e674a0b22d3,
     type: 3}
+  chainShot: {fileID: 0}
   explosionObject: {fileID: 8173962850679156067, guid: ebf5807cc5b864348a63a5e88b0877c4,
     type: 3}
 --- !u!114 &3446443157354897335
@@ -126,6 +127,12 @@ MonoBehaviour:
   money: 10
   fireRate: 1
   weaponType: 1
+  weaponFireRate:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!50 &3446443157354897334
 Rigidbody2D:
   serializedVersion: 4
@@ -198,6 +205,8 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   coinCounter: {fileID: 0}
   coinText: {fileID: 0}
+  isBoss: 0
+  endPool: {fileID: 0}
 --- !u!58 &3446443157354897323
 CircleCollider2D:
   m_ObjectHideFlags: 0

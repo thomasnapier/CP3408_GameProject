@@ -507,6 +507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 183415312}
+  - component: {fileID: 183415313}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -528,6 +529,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &183415313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183415311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a513fb6f8fb404faa5b52ce310967f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &280514634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,6 +1699,31 @@ PrefabInstance:
       propertyPath: isBoss
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9096386922992890486, guid: 760028625793b8346810c70425a8cce1,
+        type: 3}
+      propertyPath: weaponFireRate.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096386922992890486, guid: 760028625793b8346810c70425a8cce1,
+        type: 3}
+      propertyPath: weaponFireRate.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096386922992890486, guid: 760028625793b8346810c70425a8cce1,
+        type: 3}
+      propertyPath: weaponFireRate.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096386922992890486, guid: 760028625793b8346810c70425a8cce1,
+        type: 3}
+      propertyPath: weaponFireRate.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096386922992890486, guid: 760028625793b8346810c70425a8cce1,
+        type: 3}
+      propertyPath: weaponFireRate.Array.data[4]
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7803457877427214235, guid: 760028625793b8346810c70425a8cce1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 760028625793b8346810c70425a8cce1, type: 3}
@@ -2418,7 +2456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -117.299805, y: -43.549988}
+  m_AnchoredPosition: {x: -117.30078, y: -43.549988}
   m_SizeDelta: {x: 234.59998, y: 87.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215876871
@@ -3396,6 +3434,12 @@ MonoBehaviour:
   money: 0
   fireRate: 1
   weaponType: 2
+  weaponFireRate:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!114 &1789102101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3889,7 +3933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1789102094}
-  spawnTime: 10
+  spawnTime: 8
   spawnPoints:
   - {fileID: 61588766}
   - {fileID: 1771350534}

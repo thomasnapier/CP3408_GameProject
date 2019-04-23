@@ -30,7 +30,11 @@ public class EnemyManager : MonoBehaviour
             {
                 var newEnemy = Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
                 var stats = newEnemy.GetComponent<CharacterStats>();
-                stats.FireRate = (float)System.Math.Pow(0.95, TimeManager.min) + 1;
+                var fireRate = (float)System.Math.Pow(0.95, TimeManager.min) + 1;
+                for (int i = 0; i < stats.WeaponFireRate.Length; i++)
+                {
+                    stats.changeWeaponFireRateValue(i, fireRate);
+                }
                 stats.Speed = 300 + (10 * TimeManager.min);
                 stats.MaxHealth = 20 + (10 * TimeManager.min);
                 stats.CurrentHealth = stats.MaxHealth;

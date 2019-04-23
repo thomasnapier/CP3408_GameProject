@@ -15,9 +15,9 @@ public class CharacterStats : MonoBehaviour
     [SerializeField]
     private int money;
     [SerializeField]
-    private float fireRate;
-    [SerializeField]
     private int weaponType;
+    [SerializeField]
+    private float[] weaponFireRate = new float[5]; 
 
     public float CurrentHealth
     {
@@ -84,19 +84,6 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
-    public float FireRate
-    {
-        get { return fireRate; }
-
-        set
-        {
-            if (value < 0)
-                fireRate = 0;
-            else
-                fireRate = value;
-        }
-    }
-
     public int WeaponType
     {
         get { return weaponType; }
@@ -109,4 +96,16 @@ public class CharacterStats : MonoBehaviour
                 weaponType = value;
         }
     }
+
+    public float[] WeaponFireRate
+    {
+        get { return weaponFireRate; }
+    }
+
+    public void changeWeaponFireRateValue(int element, float value)
+    {
+        weaponFireRate[element] = value; 
+    }
+
+
 }
