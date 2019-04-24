@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerEquipment : MonoBehaviour
 {
-    private static int basicShotLevel;
-    private static int tripleShotLevel;
-    private static int grapeShotLevel;
-    private static int chainShotLevel;
-    private static int explosionShotLevel;
+    private static int basicShotLevel = 1;
+    private static int tripleShotLevel = 1;
+    private static int grapeShotLevel = 1;
+    private static int chainShotLevel = 1;
+    private static int explosionShotLevel = 1;
     private static int sailLevel = 1;
     private static int rudderLevel = 1;
     private static int hullLevel = 1;

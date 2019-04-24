@@ -19,6 +19,16 @@ public class BuyItem : MonoBehaviour
     GameObject sailsUpgradeText;
     GameObject ruddersUpgrade;
     GameObject ruddersUpgradeText;
+    GameObject basicShotUpgrade;
+    GameObject basicShotUpgradeText;
+    GameObject tripleShotUpgrade;
+    GameObject tripleShotUpgradeText;
+    GameObject grapeShotUpgrade;
+    GameObject grapeShotUpgradeText;
+    GameObject explosiveShotUpgrade;
+    GameObject explosiveShotUpgradeText;
+    GameObject chainShotUpgrade;
+    GameObject chainShotUpgradeText;
     private CharacterStats playerStats;
     private PlayerEquipment playerEquipment;
     public int itemValue;
@@ -48,6 +58,21 @@ public class BuyItem : MonoBehaviour
 
         sailsUpgrade = equipment.transform.Find("Sails Upgrade").gameObject;
         sailsUpgradeText = sailsUpgrade.transform.Find("SailsLevel").gameObject;
+
+        basicShotUpgrade = equipment.transform.Find("BasicShot").gameObject;
+        basicShotUpgradeText = basicShotUpgrade.transform.Find("BasicShotLevel").gameObject;
+
+        tripleShotUpgrade = equipment.transform.Find("TripleShot").gameObject;
+        tripleShotUpgradeText = tripleShotUpgrade.transform.Find("TripleShotLevel").gameObject;
+
+        grapeShotUpgrade = equipment.transform.Find("GrapeShot").gameObject;
+        grapeShotUpgradeText = grapeShotUpgrade.transform.Find("GrapeShotLevel").gameObject;
+
+        explosiveShotUpgrade = equipment.transform.Find("ExplosiveShot").gameObject;
+        explosiveShotUpgradeText = explosiveShotUpgrade.transform.Find("ExplosiveShotLevel").gameObject;
+
+        chainShotUpgrade = equipment.transform.Find("ChainShot").gameObject;
+        chainShotUpgradeText = chainShotUpgrade.transform.Find("ChainShotLevel").gameObject;
     }
 
     public void GetItemValue(int value)
@@ -73,8 +98,14 @@ public class BuyItem : MonoBehaviour
         if (isPurchasable)
         {
             playerStats.WeaponType = wepType;
+            UpgradePlayerWeapons(wepType);
             isPurchasable = false;
         }
+    }
+
+    public void SwapWeaponType(int wepType)
+    {
+        playerStats.WeaponType = wepType;
     }
 
     public void UpgradePlayerEquipment(int upgradeType)
@@ -96,6 +127,33 @@ public class BuyItem : MonoBehaviour
                     ruddersUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.RudderLevel;
                     break;
             }
+        }
+    }
+
+    public void UpgradePlayerWeapons(int wepType)
+    {
+        switch (wepType)
+        {
+            case 0:
+                PlayerEquipment.BasicShotLevel += 1;
+                basicShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.BasicShotLevel;
+                break;
+            case 1:
+                PlayerEquipment.TripleShotLevel += 1;
+                tripleShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.TripleShotLevel;
+                break;
+            case 2:
+                PlayerEquipment.GrapeShotLevel += 1;
+                grapeShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.GrapeShotLevel;
+                break;
+            case 3:
+                PlayerEquipment.ExplosionShotLevel += 1;
+                explosiveShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.ExplosionShotLevel;
+                break;
+            case 4:
+                PlayerEquipment.ChainShotLevel += 1;
+                chainShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.ChainShotLevel;
+                break;
         }
     }
 }
