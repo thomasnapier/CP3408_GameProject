@@ -129,11 +129,11 @@ public class PlayerEquipment : MonoBehaviour
         int[] weaponLevels = {basicShotLevel, tripleShotLevel, grapeShotLevel, explosionShotLevel, chainShotLevel};
         playerStats.MaxHealth = hullLevel *  100;
         playerStats.CurrentHealth = playerStats.MaxHealth;
-        playerStats.Speed = sailLevel;
+        playerStats.Speed = (float)(2 * System.Math.Log(sailLevel)) + 2;
         playerStats.RotationSpeed = rudderLevel;
         for (int i = 0; i < playerStats.WeaponFireRate.Length; i++)
         {
-            playerStats.changeWeaponFireRateValue(i, (float)System.Math.Pow(0.95, weaponLevels[i]) + 1);
+            playerStats.changeWeaponFireRateValue(i, (float)System.Math.Pow(0.95, weaponLevels[i]));
         }
     }
 }
