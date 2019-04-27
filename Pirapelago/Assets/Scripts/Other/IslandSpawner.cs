@@ -17,7 +17,6 @@ public class IslandSpawner : MonoBehaviour
     void Awake()
     {
         int randomNum = Random.Range(0, 100);
-        Debug.Log(randomNum);
         if (randomNum > 0 && randomNum < island1SpawnRate)
         {
             Instantiate(island1, GetComponent<Transform>().position, Quaternion.identity);
@@ -36,6 +35,10 @@ public class IslandSpawner : MonoBehaviour
         }
 
 
+    }
+
+    private void Start()
+    {
         AstarPath.active.Scan();
     }
 }

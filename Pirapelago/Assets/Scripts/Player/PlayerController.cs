@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public int acceleration;
     public GameObject director;
     public Slider lifeBar;
+    private bool dead = false;
 
     Vector3 mousePositionInWorld;
     float angle;
@@ -57,10 +58,12 @@ public class PlayerController : MonoBehaviour
             stats.CurrentHealth -= collision.gameObject.GetComponent<ProjectileController>().damage;
             lifeBar.value = stats.CurrentHealth;
             Destroy(collision.gameObject);
-            if (stats.CurrentHealth == 0)
+            if (stats.CurrentHealth == 0 && !dead)
             {
+                dead = true;
                 //TODO die
-
+                GameObject.Find("Canvas").transform.Find("EndGame").gameObject.SetActive(true);
+                Time.timeScale = 0;
             }
         }
     }
