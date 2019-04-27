@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public int acceleration;
     public GameObject director;
     public Slider lifeBar;
-    private bool dead = false;
+    public bool dead = false;
 
     Vector3 mousePositionInWorld;
     float angle;
@@ -24,6 +24,11 @@ public class PlayerController : MonoBehaviour
         stats = gameObject.GetComponent<CharacterStats>();
         lifeBar.maxValue = stats.MaxHealth;
         lifeBar.value = stats.CurrentHealth;
+    }
+
+    public void killSelf()
+    {
+        dead = true;
     }
 
     void FixedUpdate()
