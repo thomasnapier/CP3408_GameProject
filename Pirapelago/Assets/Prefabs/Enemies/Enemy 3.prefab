@@ -149,6 +149,8 @@ MonoBehaviour:
   coinText: {fileID: 0}
   isBoss: 0
   endPool: {fileID: 0}
+  healthPickup: {fileID: 3102592946125318577, guid: b797a396b33b0ee47bbeab7a8782fc4c,
+    type: 3}
 --- !u!114 &439886619240034854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +196,6 @@ MonoBehaviour:
   speed: 350
   rotationSpeed: 5
   money: 1
-  fireRate: 1
   weaponType: 3
   weaponFireRate:
   - 1

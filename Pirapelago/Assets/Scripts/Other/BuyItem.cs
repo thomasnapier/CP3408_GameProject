@@ -30,6 +30,7 @@ public class BuyItem : MonoBehaviour
     GameObject chainShotUpgrade;
     GameObject chainShotUpgradeText;
     private CharacterStats playerStats;
+    [SerializeField]
     private PlayerEquipment playerEquipment;
     public int itemValue;
     int playerCoins;
@@ -38,6 +39,8 @@ public class BuyItem : MonoBehaviour
     void Awake()
     {
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
+        playerEquipment = GameObject.Find("GameManager").GetComponent<PlayerEquipment>();
+
         canvas = GameObject.FindGameObjectWithTag("canvas");
         healthSlider = canvas.transform.Find("healthSlider").gameObject;
         coinCounter = healthSlider.transform.Find("coinCounter").gameObject;
@@ -83,13 +86,14 @@ public class BuyItem : MonoBehaviour
 
     private void SubtractItemValue()
     {
-        if(itemValue < playerStats.Money)
+        if(itemValue <= playerStats.Money)
         {
             playerStats.Money -= itemValue;
             isPurchasable = true;
 
             coinText.GetComponent<TextMeshProUGUI>().text = playerStats.Money.ToString();
             boughtOverlay.SetActive(true);
+            playerEquipment.updatePlayerStats();
         }
     }
 

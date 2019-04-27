@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerEquipment : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerEquipment : MonoBehaviour
     private static int hullLevel = 1;
     private CharacterStats playerStats;
 
-    private void Update()
+    private void Start()
     {
         updatePlayerStats();
     }
@@ -135,5 +136,6 @@ public class PlayerEquipment : MonoBehaviour
         {
             playerStats.changeWeaponFireRateValue(i, (float)System.Math.Pow(0.95, weaponLevels[i]));
         }
+        GameObject.Find("Canvas").transform.Find("healthSlider").GetComponent<Slider>().value = playerStats.CurrentHealth;
     }
 }

@@ -42,6 +42,8 @@ public class EnemyFollow : MonoBehaviour
     public bool isBoss;
     [SerializeField]
     GameObject endPool;
+    [SerializeField]
+    private GameObject healthPickup;
 
 
     private CharacterStats stats;
@@ -135,7 +137,7 @@ public class EnemyFollow : MonoBehaviour
                 return;
             }
         }
-        else
+        if (distToTarget < stopApproachDistance)
         {
             gameObject.GetComponent<CharacterShoot>().fireWeapon(stats.WeaponType);
         }
@@ -160,6 +162,10 @@ public class EnemyFollow : MonoBehaviour
                     target.gameObject.GetComponent<CharacterStats>().Money += stats.Money;
                     ScoreManager.score += stats.Money;
                     coinText.GetComponent<TextMeshProUGUI>().text = playerStats.Money.ToString();
+                    if (Random.Range(0, 4) == 0)
+                    {
+                        Instantiate(healthPickup, transform.position, transform.rotation);
+                    }
 
                     if (isBoss)
                     {

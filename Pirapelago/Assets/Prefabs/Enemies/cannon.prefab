@@ -125,7 +125,6 @@ MonoBehaviour:
   speed: 0
   rotationSpeed: 100
   money: 10
-  fireRate: 1
   weaponType: 1
   weaponFireRate:
   - 1
@@ -199,7 +198,7 @@ MonoBehaviour:
   fMode: 0
   pathIsEnded: 0
   nextWaypointDistance: 0.4
-  stopApproachDistance: 6
+  stopApproachDistance: 9
   reverseApproachDistance: 5
   startRotationOffset: -90
   healthSlider: {fileID: 0}
@@ -207,6 +206,8 @@ MonoBehaviour:
   coinText: {fileID: 0}
   isBoss: 0
   endPool: {fileID: 0}
+  healthPickup: {fileID: 7240617246340828726, guid: 1cd2800bb7feed641b175c46c766533a,
+    type: 3}
 --- !u!58 &3446443157354897323
 CircleCollider2D:
   m_ObjectHideFlags: 0

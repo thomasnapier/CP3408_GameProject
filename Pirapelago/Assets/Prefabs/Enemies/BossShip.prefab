@@ -161,6 +161,8 @@ MonoBehaviour:
   coinText: {fileID: 0}
   isBoss: 1
   endPool: {fileID: 1405988162605390237, guid: 1308d4fe86244614a9e70096e61aa167, type: 3}
+  healthPickup: {fileID: 3102592946125318577, guid: b797a396b33b0ee47bbeab7a8782fc4c,
+    type: 3}
 --- !u!114 &9096386922992890486
 MonoBehaviour:
   m_ObjectHideFlags: 0
