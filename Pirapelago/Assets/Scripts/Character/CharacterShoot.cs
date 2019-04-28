@@ -11,8 +11,8 @@ public class CharacterShoot : MonoBehaviour
     public GameObject chainShot;
     private Transform BulletSpawn;
     private float nextFire;
-    private Vector2[] fireVectors = new Vector2[9];
-    private GameObject[] bullets = new GameObject[9];
+    private Vector2[] fireVectors = new Vector2[21];
+    private GameObject[] bullets = new GameObject[21];
     private CharacterStats stats;
     private ProjectileController projectileController;
     public GameObject explosionObject;
@@ -115,7 +115,43 @@ public class CharacterShoot : MonoBehaviour
                         bullet.GetComponent<ProjectileController>().direction = fireVectors[0];
                         break;
                     }
-                    
+                case 5:
+                    {
+                        for (int i = 0; i < 18; i++)
+                        {
+                            fireVectors[i] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
+                            bullets[i] = Instantiate(explosiveShot, BulletSpawn.position, BulletSpawn.rotation);
+                            fireVectors[i] = RotateVector(fireVectors[i], i * 20);
+                        }
+                        for (int i = 0; i < 18; i++)
+                        {
+                            bullets[i].GetComponent<ProjectileController>().direction = fireVectors[i];
+                        }
+                        nextFire = Time.time + 1;
+                        break;
+                    }
+                case 6:
+                    {
+                        for (int i = 0; i < 10; i++)
+                        {
+                            fireVectors[i] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
+                            bullets[i] = Instantiate(shot, BulletSpawn.position, BulletSpawn.rotation);
+                            fireVectors[i] = RotateVector(fireVectors[i], -i * 10 - 40);
+                        }
+                        for (int i = 0; i < 10; i++)
+                        {
+                            fireVectors[i + 10] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
+                            bullets[i + 10] = Instantiate(shot, BulletSpawn.position, BulletSpawn.rotation);
+                            fireVectors[i + 10] = RotateVector(fireVectors[i + 10], i * 10 + 40);
+                        }
+                        for (int i = 0; i < 20; i++)
+                        {
+                            bullets[i].GetComponent<ProjectileController>().direction = fireVectors[i];
+                        }
+                        nextFire = Time.time + .2f;
+                        break;
+                    }
+
             }
 
         }

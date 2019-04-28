@@ -21,7 +21,7 @@ public class HealthPickup : MonoBehaviour
                 }
                 else
                 {
-                    //stats.CurrentHealth = stats.MaxHealth;
+                    stats.CurrentHealth = stats.MaxHealth;
                 }
                 GameObject.Find("Canvas").transform.Find("healthSlider").GetComponent<Slider>().value = stats.CurrentHealth;
                 Destroy(gameObject, 0);
