@@ -101,7 +101,7 @@ public class BuyItem : MonoBehaviour
     {
         if (isPurchasable)
         {
-            playerStats.WeaponType = wepType;
+            //playerStats.WeaponType = wepType;
             UpgradePlayerWeapons(wepType);
             isPurchasable = false;
         }

@@ -18,7 +18,7 @@ public class TimeManager : MonoBehaviour
         timeText = GetComponent<TextMeshProUGUI>();
         sec = 0;
         min = 0;
-        timer = 0;
+        timer = AnyManager.anyManager.time;
     }
 
     void Update()

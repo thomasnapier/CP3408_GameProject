@@ -11,11 +11,49 @@ public class ChangeWeapon : MonoBehaviour
     public void changeWeapon(int weapon)
     {
         character = GameObject.FindGameObjectWithTag("Player");
-        character.GetComponent<CharacterStats>().WeaponType = weapon;
-        for (int i = 0; i < 5; i++)
+        bool locked = false;
+        switch (weapon)
         {
-            equipmentObjects[i].transform.Find("Panel").gameObject.SetActive(false);
+            case 0:
+                if (PlayerEquipment.BasicShotLevel == 0)
+                {
+                    locked = true;
+                }
+                break;
+            case 1:
+                if (PlayerEquipment.TripleShotLevel == 0)
+                {
+                    locked = true;
+                }
+                break;
+            case 2:
+                if (PlayerEquipment.GrapeShotLevel == 0)
+                {
+                    locked = true;
+                }
+                break;
+            case 3:
+                if (PlayerEquipment.ExplosionShotLevel == 0)
+                {
+                    locked = true;
+                }
+                break;
+            case 4:
+                if (PlayerEquipment.ChainShotLevel == 0)
+                {
+                    locked = true;
+                }
+                break;
         }
-        equipmentObjects[weapon].transform.Find("Panel").gameObject.SetActive(true);
+
+        if (!locked)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                equipmentObjects[i].transform.Find("Panel").gameObject.SetActive(false);
+            }
+            equipmentObjects[weapon].transform.Find("Panel").gameObject.SetActive(true);
+            character.GetComponent<CharacterStats>().WeaponType = weapon;
+        }
     }
 }

@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();     //assigns the rigidbody to the rb2d variable
         stats = gameObject.GetComponent<CharacterStats>();
+        GameObject.Find("GameManager").GetComponent<PlayerEquipment>().updatePlayerStats();
+        GetComponent<CharacterStats>().WeaponType = GameObject.Find("GameManager").GetComponent<AnyManager>().selectedWeapon;
         lifeBar.maxValue = stats.MaxHealth;
         lifeBar.value = stats.CurrentHealth;
     }

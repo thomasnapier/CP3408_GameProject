@@ -14,31 +14,31 @@ public class IslandSpawner : MonoBehaviour
     public int island1SpawnRate, island2SpawnRate, island3SpawnRate, islandSkullSpawnRate;
 
 
-    void Awake()
+    void Start()
     {
         int randomNum = Random.Range(0, 100);
         if (randomNum > 0 && randomNum < island1SpawnRate)
         {
-            Instantiate(island1, GetComponent<Transform>().position, Quaternion.identity);
+            Instantiate(island1, GetComponent<Transform>().position, Quaternion.identity).tag = "Temp";
         }
         else if (randomNum > island1SpawnRate && randomNum < island2SpawnRate)
         {
-            Instantiate(island2, GetComponent<Transform>().position, Quaternion.identity);
+            Instantiate(island2, GetComponent<Transform>().position, Quaternion.identity).tag = "Temp";
         }
         else if (randomNum > island2SpawnRate && randomNum < island3SpawnRate)
         {
-            Instantiate(island3, GetComponent<Transform>().position, Quaternion.identity);
+            Instantiate(island3, GetComponent<Transform>().position, Quaternion.identity).tag = "Temp";
         }
         else if (randomNum > island3SpawnRate && randomNum < islandSkullSpawnRate)
         {
-            Instantiate(skullIsland, GetComponent<Transform>().position, Quaternion.identity);
+            Instantiate(skullIsland, GetComponent<Transform>().position, Quaternion.identity).tag = "Temp";
         }
 
-
-    }
-
-    private void Start()
-    {
         AstarPath.active.Scan();
     }
+
+   // private void Start()
+   // {
+    //    AstarPath.active.Scan();
+    //}
 }

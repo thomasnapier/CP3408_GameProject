@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class PlayerEquipment : MonoBehaviour
 {
     private static int basicShotLevel = 1;
-    private static int tripleShotLevel = 1;
-    private static int grapeShotLevel = 1;
-    private static int chainShotLevel = 1;
-    private static int explosionShotLevel = 1;
+    private static int tripleShotLevel = 0;
+    private static int grapeShotLevel = 0;
+    private static int chainShotLevel = 0;
+    private static int explosionShotLevel = 0;
     private static int sailLevel = 1;
     private static int rudderLevel = 1;
     private static int hullLevel = 1;
@@ -17,7 +17,10 @@ public class PlayerEquipment : MonoBehaviour
 
     private void Start()
     {
-        updatePlayerStats();
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            updatePlayerStats();
+        }
     }
 
     public static int BasicShotLevel

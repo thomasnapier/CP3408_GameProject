@@ -17,6 +17,18 @@ public class LevelChanger : MonoBehaviour
 
     public void OnFadeComplete ()
     {
-        SceneManager.LoadScene(levelToLoad);
+
+        GameObject[] temps = GameObject.FindGameObjectsWithTag("Temp");
+        for (int i = 0; i < temps.Length; i++)
+        {
+            Destroy(temps[i]);
+        }
+        if (levelToLoad == 2 && SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            AnyManager.anyManager.LoadScene(levelToLoad, 1);
+        } else
+        {
+            AnyManager.anyManager.LoadScene(levelToLoad, SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

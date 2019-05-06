@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     void Awake()
     {
         scoreText = GetComponent<TextMeshProUGUI>();
-        score = 0;
+        score = AnyManager.anyManager.score;
     }
 
     void Update()
