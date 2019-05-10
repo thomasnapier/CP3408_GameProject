@@ -180,7 +180,7 @@ MonoBehaviour:
   speed: 100
   rotationSpeed: 5
   money: 10
-  weaponType: 0
+  weaponType: 2
   weaponFireRate:
   - 1
   - 1
@@ -210,6 +210,8 @@ MonoBehaviour:
     type: 3}
   explosionObject: {fileID: 8173962850679156067, guid: ebf5807cc5b864348a63a5e88b0877c4,
     type: 3}
+  shootSound1: {fileID: 8300000, guid: 0f8ae2862ff6e5c48abed8edce177994, type: 3}
+  shootSound2: {fileID: 8300000, guid: 56b761ed8f2940e46bd6e0229ada01b9, type: 3}
 --- !u!70 &5468041939458722577
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

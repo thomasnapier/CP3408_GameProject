@@ -35,6 +35,7 @@ public class BuyItem : MonoBehaviour
     public int itemValue;
     int playerCoins;
     bool isPurchasable = false;
+    public AudioClip buySound;
 
     void Awake()
     {
@@ -88,6 +89,7 @@ public class BuyItem : MonoBehaviour
     {
         if(itemValue <= playerStats.Money)
         {
+            SoundManager.instance.PlaySingle(buySound);
             playerStats.Money -= itemValue;
             isPurchasable = true;
 

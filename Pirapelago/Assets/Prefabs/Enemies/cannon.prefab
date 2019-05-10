@@ -108,6 +108,8 @@ MonoBehaviour:
   chainShot: {fileID: 0}
   explosionObject: {fileID: 8173962850679156067, guid: ebf5807cc5b864348a63a5e88b0877c4,
     type: 3}
+  shootSound1: {fileID: 8300000, guid: 0f8ae2862ff6e5c48abed8edce177994, type: 3}
+  shootSound2: {fileID: 8300000, guid: 56b761ed8f2940e46bd6e0229ada01b9, type: 3}
 --- !u!114 &3446443157354897335
 MonoBehaviour:
   m_ObjectHideFlags: 0

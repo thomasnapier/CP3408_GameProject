@@ -332,7 +332,9 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   coinCounter: {fileID: 0}
   boughtOverlay: {fileID: 0}
+  playerEquipment: {fileID: 0}
   itemValue: 0
+  buySound: {fileID: 8300000, guid: 9bffe886a3f295f47934f5c931228be0, type: 3}
 --- !u!1 &2810278799681883538
 GameObject:
   m_ObjectHideFlags: 0

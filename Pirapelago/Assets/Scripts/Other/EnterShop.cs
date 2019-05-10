@@ -7,6 +7,7 @@ public class EnterShop : MonoBehaviour
 {
     public GameObject shopUI;
     public GameObject canvas;
+    public AudioSource openShop;
 
     bool isPaused;
 
@@ -14,6 +15,7 @@ public class EnterShop : MonoBehaviour
     {
         canvas = GameObject.FindGameObjectWithTag("canvas");
         shopUI = canvas.transform.Find("shopUI").gameObject;
+        openShop = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,6 +23,7 @@ public class EnterShop : MonoBehaviour
         if (collision.tag == "Player")
         {
             PauseGame();
+            openShop.Play(0);
         }
     }
 

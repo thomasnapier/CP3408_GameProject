@@ -16,6 +16,8 @@ public class CharacterShoot : MonoBehaviour
     private CharacterStats stats;
     private ProjectileController projectileController;
     public GameObject explosionObject;
+    public AudioClip shootSound1;
+    public AudioClip shootSound2;
 
 
 
@@ -38,6 +40,7 @@ public class CharacterShoot : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
+            SoundManager.instance.RandomizeSfx(shootSound1, shootSound2); //play cannonfire sound 
             Instantiate(explosionObject, BulletSpawn.position, BulletSpawn.rotation);
             switch (weaponType)
             {
@@ -56,7 +59,6 @@ public class CharacterShoot : MonoBehaviour
 
                 case 1: //triple mode
                     {
-                        //make vector of ship direction
                         for (int i = 0; i < 3; i++)
                         {
                             fireVectors[i] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
@@ -67,7 +69,6 @@ public class CharacterShoot : MonoBehaviour
                         fireVectors[1] = RotateVector(fireVectors[1], 20);
                         fireVectors[2] = RotateVector(fireVectors[2], -20);
 
-                        //create a new cannonball on the bulletSpawn
                         for (int i = 0; i < 3; i++)
                         {
                             bullets[i].GetComponent<ProjectileController>().direction = fireVectors[i];
@@ -77,10 +78,7 @@ public class CharacterShoot : MonoBehaviour
                         break;
                     }
                 case 2: //grape shot
-                    {
-                        //make vector of ship direction
-                        //create a new cannonball on the bulletSpawn
-                        fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
+                    {                        fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
 
                         for (int i = 1; i < 9; i++)
                         {
@@ -91,15 +89,12 @@ public class CharacterShoot : MonoBehaviour
 
                         //make vector of ship direction
                         fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
-                        //create a new cannonball on the bulletSpawn
                         nextFire = Time.time + stats.WeaponFireRate[2];
                         break;
                     }
                 case 3: //explosive shot
                     {
-                        //make vector of ship direction
                         fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
-                        //create a new cannonball on the bulletSpawn
                         nextFire = Time.time + stats.WeaponFireRate[3];
                         var bullet = Instantiate(explosiveShot, BulletSpawn.position, BulletSpawn.rotation);
                         bullet.GetComponent<ProjectileController>().direction = fireVectors[0];
@@ -107,15 +102,13 @@ public class CharacterShoot : MonoBehaviour
                     }
                 case 4: //chain shot
                     {
-                        //make vector of ship direction
                         fireVectors[0] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
-                        //create a new cannonball on the bulletSpawn
                         nextFire = Time.time + stats.WeaponFireRate[4];
                         var bullet = Instantiate(chainShot, BulletSpawn.position, BulletSpawn.rotation);
                         bullet.GetComponent<ProjectileController>().direction = fireVectors[0];
                         break;
                     }
-                case 5:
+                case 5: //boss shot 1
                     {
                         for (int i = 0; i < 18; i++)
                         {
@@ -130,7 +123,7 @@ public class CharacterShoot : MonoBehaviour
                         nextFire = Time.time + 1;
                         break;
                     }
-                case 6:
+                case 6: //boss shot 2
                     {
                         for (int i = 0; i < 10; i++)
                         {
