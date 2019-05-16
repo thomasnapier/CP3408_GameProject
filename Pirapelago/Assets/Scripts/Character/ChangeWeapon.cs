@@ -8,6 +8,14 @@ public class ChangeWeapon : MonoBehaviour
     private GameObject character;
     [SerializeField]
     private GameObject[] equipmentObjects = new GameObject[5];
+
+    private void Start()
+    {
+        character = GameObject.FindGameObjectWithTag("Player");
+
+        changeWeapon(character.GetComponent<CharacterStats>().WeaponType);
+    }
+
     public void changeWeapon(int weapon)
     {
         character = GameObject.FindGameObjectWithTag("Player");

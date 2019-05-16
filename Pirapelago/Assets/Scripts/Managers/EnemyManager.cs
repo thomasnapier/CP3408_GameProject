@@ -40,6 +40,7 @@ public class EnemyManager : MonoBehaviour
                 stats.Speed = 300 + (10 * TimeManager.min);
                 stats.MaxHealth = 20 + (10 * TimeManager.min);
                 stats.CurrentHealth = stats.MaxHealth;
+                stats.Money += TimeManager.min;
                 spawned = false;
             }
         }

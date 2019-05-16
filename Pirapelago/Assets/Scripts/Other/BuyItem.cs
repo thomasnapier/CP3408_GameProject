@@ -77,6 +77,7 @@ public class BuyItem : MonoBehaviour
 
         chainShotUpgrade = equipment.transform.Find("ChainShot").gameObject;
         chainShotUpgradeText = chainShotUpgrade.transform.Find("ChainShotLevel").gameObject;
+        UpdateEquipmentLables();
     }
 
     public void GetItemValue(int value)
@@ -122,18 +123,16 @@ public class BuyItem : MonoBehaviour
             {
                 case 0:
                     PlayerEquipment.HullLevel+=1;
-                    hullUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.HullLevel;
                     break;
                 case 1:
                     PlayerEquipment.SailLevel+=1;
-                    sailsUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.SailLevel;
                     break;
                 case 2:
                     PlayerEquipment.RudderLevel+=1;
-                    ruddersUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.RudderLevel;
                     break;
             }
         }
+        UpdateEquipmentLables();
     }
 
     public void UpgradePlayerWeapons(int wepType)
@@ -142,24 +141,32 @@ public class BuyItem : MonoBehaviour
         {
             case 0:
                 PlayerEquipment.BasicShotLevel += 1;
-                basicShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.BasicShotLevel;
                 break;
             case 1:
                 PlayerEquipment.TripleShotLevel += 1;
-                tripleShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.TripleShotLevel;
                 break;
             case 2:
                 PlayerEquipment.GrapeShotLevel += 1;
-                grapeShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.GrapeShotLevel;
                 break;
             case 3:
                 PlayerEquipment.ExplosionShotLevel += 1;
-                explosiveShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.ExplosionShotLevel;
                 break;
             case 4:
                 PlayerEquipment.ChainShotLevel += 1;
-                chainShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.ChainShotLevel;
                 break;
         }
+        UpdateEquipmentLables();
+    }
+
+    public void UpdateEquipmentLables()
+    {
+        hullUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.HullLevel;
+        sailsUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.SailLevel;
+        ruddersUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.RudderLevel;
+        basicShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.BasicShotLevel;
+        tripleShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.TripleShotLevel;
+        grapeShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.GrapeShotLevel;
+        explosiveShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.ExplosionShotLevel;
+        chainShotUpgradeText.GetComponent<TextMeshProUGUI>().text = "Lvl " + PlayerEquipment.ChainShotLevel;
     }
 }

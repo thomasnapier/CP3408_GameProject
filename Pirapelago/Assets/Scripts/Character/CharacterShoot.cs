@@ -113,7 +113,7 @@ public class CharacterShoot : MonoBehaviour
                         for (int i = 0; i < 18; i++)
                         {
                             fireVectors[i] = new Vector2(BulletSpawn.position.x - transform.position.x, BulletSpawn.position.y - transform.position.y).normalized;
-                            bullets[i] = Instantiate(explosiveShot, BulletSpawn.position, BulletSpawn.rotation);
+                            bullets[i] = Instantiate(shot, BulletSpawn.position, BulletSpawn.rotation);
                             fireVectors[i] = RotateVector(fireVectors[i], i * 20);
                         }
                         for (int i = 0; i < 18; i++)

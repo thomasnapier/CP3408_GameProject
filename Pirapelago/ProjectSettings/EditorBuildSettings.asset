@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: b2534cdc0229099469a27d3b89c2b668
   - enabled: 1
-    path: Assets/Scenes/SceneTestingJosh.unity
+    path: Assets/Scenes/Level1.unity
     guid: de384c12cbd92e341bc309eb143cac32
   - enabled: 1
-    path: Assets/Scenes/SceneTestingJosh 1.unity
+    path: Assets/Scenes/Level2.unity
     guid: b449fc408cda83147852bab96cb50827
   m_configObjects: {}

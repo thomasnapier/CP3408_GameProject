@@ -1670,7 +1670,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2073150987
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: aedfc8b9347581e4eb8b400a9121cc56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1761,14 +1761,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 60
-  maxSpeed: 5
   director: {fileID: 0}
-  speedFector: 5
+  lifeBar: {fileID: 0}
+  dead: 0
   startRotationOffset: 90
-  shot: {fileID: 242355404103357571, guid: 9f84e06c6e31fd24faade0415fd3668d, type: 3}
-  BulletSpawn: {fileID: 1756650223}
-  fireRate: 1
-  fireVector: {x: 0, y: 0}
 --- !u!1 &1855237022
 GameObject:
   m_ObjectHideFlags: 0

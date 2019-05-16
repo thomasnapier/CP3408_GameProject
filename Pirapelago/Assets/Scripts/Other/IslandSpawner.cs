@@ -34,11 +34,7 @@ public class IslandSpawner : MonoBehaviour
             Instantiate(skullIsland, GetComponent<Transform>().position, Quaternion.identity).tag = "Temp";
         }
 
-        AstarPath.active.Scan();
+        //AstarPath.active.Scan();
     }
 
-   // private void Start()
-   // {
-    //    AstarPath.active.Scan();
-    //}
 }

@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<CharacterStats>().WeaponType = GameObject.Find("GameManager").GetComponent<AnyManager>().selectedWeapon;
         lifeBar.maxValue = stats.MaxHealth;
         lifeBar.value = stats.CurrentHealth;
+        AstarPath.active.Scan();
     }
 
     public void killSelf()

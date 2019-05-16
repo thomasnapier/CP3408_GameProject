@@ -67,7 +67,6 @@ public class EnemyFollow : MonoBehaviour
         if (target == null)
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
-            Debug.Log(target);
             yield return false;
         }
 

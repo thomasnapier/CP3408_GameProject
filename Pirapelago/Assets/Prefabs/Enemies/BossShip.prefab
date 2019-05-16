@@ -180,7 +180,7 @@ MonoBehaviour:
   speed: 100
   rotationSpeed: 5
   money: 10
-  weaponType: 2
+  weaponType: 5
   weaponFireRate:
   - 1
   - 1
@@ -252,7 +252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5241166001737572747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.86, z: 0}
+  m_LocalPosition: {x: 0, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9183547538006814508}
